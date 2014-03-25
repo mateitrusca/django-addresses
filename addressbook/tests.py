@@ -1,10 +1,11 @@
-import unittest
-
+from django.test import TestCase
 from addressbook.conf import settings
 from addressbook.models import Address, Country
 
 
-class AddressTestCase(unittest.TestCase):
+class AddressTestCase(TestCase):
+    fixtures = ['initial_data.xml']
+
     def testAddAddress(self):
         saved = settings.NORMALISE_TO_UPPER
 
